@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: WoWSky 1.0.0 
+## Author: qtPyDev 
+## Version: 1.0.0
+## Notes: Allows for in-game BlueSky integration.
+## SavedVariablesPerCharacter: wowsky_data
+
+wowsky.xml

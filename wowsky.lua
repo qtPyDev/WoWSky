@@ -12,6 +12,10 @@ this file is apart of WoWSky
 
 
 
+local addon_name = "WOWSKY";
+
+
+
 function cmd_parser(token)
     if (token == "post") or (token == "") then
         print("open post dialog");
@@ -22,7 +26,7 @@ end
 
 
 function wowsky_load()
-    SlashCmdList[addonName] = cmd_parser;
-    SLASH_wowsky1 = "/share";
-    SLASH_wowsky2 = "/bsky";
+    SlashCmdList[addon_name] = cmd_parser;
+    SLASH_WOWSKY1 = "/share";
+    SLASH_WOWSKY2 = "/bsky";
 end

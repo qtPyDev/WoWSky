@@ -29,6 +29,7 @@ end
 function cmd_parser(token)
     if (token == "post") or (token == "") then
         writeln("open post dialog");
+        wowsky_window();
     elseif (token == "user") then
         writeln("current user: example.bsky.social");
     end

@@ -15,12 +15,16 @@ this file is apart of WoWSky
 local addon_name = "WOWSKY";
 
 
+function writeln(text)
+    DEFAULT_CHAT_FRAME:AddMessage(text);
+end
+
 
 function cmd_parser(token)
     if (token == "post") or (token == "") then
-        print("open post dialog");
+        writeln("open post dialog");
     elseif (token == "user") then
-        print("current user: example.bsky.social");
+        writeln("current user: example.bsky.social");
     end
 end
 

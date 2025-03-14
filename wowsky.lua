@@ -15,6 +15,12 @@ this file is apart of WoWSky
 local addon_name = "WOWSKY";
 
 
+function wowsky_window()
+    local frame = CreateFrame("Frame");
+    frame:RegisterEvent("ADDON_LOADED");
+end
+
+
 function writeln(text)
     DEFAULT_CHAT_FRAME:AddMessage(text);
 end

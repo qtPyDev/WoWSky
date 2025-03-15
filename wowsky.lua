@@ -13,11 +13,21 @@ this file is apart of WoWSky
 
 
 local addon_name = "WOWSKY";
+local size_x = 200;
+local size_y = 40;
+
 
 
 function wowsky_window()
-    local frame = CreateFrame("Frame");
-    frame:RegisterEvent("ADDON_LOADED");
+    local window_frame = CreateFrame("Frame", "WoWSky", UIParent, "BasicFrameTemplate");
+    window_frame:SetSize(size_x, size_y);
+    window_frame:SetPoint("CENTER", UIParent, "CENTER");
+    window_frame:Hide();
+    window_frame:SetMovable(true);
+    window_frame:EnableMouse(true);
+    window_frame:RegisterForDrag("LeftButton");
+    window_frame:SetScript("OnDragStart", window_frame.StartMoving)
+    window_frame:SetScript("OnDragStop", window_frame.StopMovingOrSizing)
 end
 
 
@@ -37,6 +47,9 @@ end
 
 
 function wowsky_load()
+    local addon_load_frame = CreateFrame("Frame");
+    addon_load_frame:RegisterEvent("ADDON_LOADED");
+    
     SlashCmdList[addon_name] = cmd_parser;
     SLASH_WOWSKY1 = "/share";
     SLASH_WOWSKY2 = "/bsky";
